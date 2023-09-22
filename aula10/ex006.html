@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 006</title>
+    <style>
+        #area {
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        botão
+    </div>
+
+    <script>
+        area = document.querySelector('div#area')
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        area.addEventListener('mousedown', pressionar)
+
+        function clicar() {
+            area.style.background = 'green'
+            area.style.color = 'white'
+            area.innerText = 'Clicou'
+        }
+
+        function entrar() {
+            area.innerText = 'Entrou'
+        }
+
+        function sair() {
+            area.innerText = 'Saiu'
+        }
+
+        function pressionar() {
+            area.innerText = 'Pressionou'
+        }
+    </script>
+</body>
+</html>

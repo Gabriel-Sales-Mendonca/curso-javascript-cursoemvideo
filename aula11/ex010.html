@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 010</title>
+    <style>
+        body {
+            background-color: rgb(143, 174, 188);
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        #multado {
+            color: red;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Digite a velocidade do carro: <input type="number" name="velocidade" id="velocidade" placeholder="Velocidade Km/h">
+    <input type="button" value="Enviar" onclick="clicar()">
+    <div id="msg"></div> <!--irá exibir uma mensagem quando o botão for clicado-->
+    <div id="resultado-multa"></div> <!--mostra a mensagem se a pessoa foi multada ou não-->
+
+    <script>
+        vel = document.querySelector('input#velocidade') //velocidade do carro
+        res = document.getElementById('resultado-multa') //resposde se a pessoa foi multada ou não
+        function clicar() {
+            velocidade = Number(vel.value)
+            mensagem = document.querySelector('div#msg')
+        
+            mensagem.innerHTML = `O carro está a ${velocidade} Km/h.` //exibe a velocidade do carro
+
+            res.innerHTML = analisar()
+        }
+
+        function analisar() { /* analisa se a velocidade é acima ou abaixo da velocidade permitida 
+            multa: resultado da analise se a pessoa foi multada ou não.
+            return: multa*/
+            velocidade = Number(vel.value)
+            if (velocidade <= 60) {
+                multa = 'Você está dentro da velocidade permitida que é 60 Km/h!'
+                
+                return multa;
+            }
+            else {
+                multa = 'Você está acima da velocidade permitida, você foi <div id="multado">MULTADO</div>!'
+                
+                return multa;
+            }
+        }
+
+    </script>
+</body>
+</html>

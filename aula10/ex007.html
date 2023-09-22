@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 007</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+
+        #res {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="" id="n1">
+    +
+    <input type="number" name="" id="n2">
+    <input id="bot" type="button" value="Somar" onclick="somar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="res">Resultado:</div>
+
+    <script>
+        function somar() {
+            n1 = document.querySelector('input#n1')
+            n2 = document.querySelector('input#n2')
+            res = document.querySelector('div#res')
+
+            num1 = Number(n1.value)
+            num2 = Number(n2.value)
+            soma = num1 + num2
+
+            res.innerHTML = `Resultado: <strong>${soma}</strong>`
+        }
+
+        function entrar() {
+            botao = document.querySelector('input#bot')
+            botao.style.background = 'green'
+            botao.style.color = 'white'
+        }
+
+        function sair() {
+            botao = document.querySelector('input#bot')
+            botao.style.background = 'white'
+            botao.style.color = 'black'
+        }
+    </script>
+</body>
+</html>

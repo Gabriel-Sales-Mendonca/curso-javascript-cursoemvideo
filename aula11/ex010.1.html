@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 010.1</title>
+</head>
+<body>
+    <h1>Você é Brasileiro ou Estrangeiro ?</h1>
+    Digite o nome do país em que Você está vivendo: <input type="text" name="nomepais" id="paiis">
+    <input type="button" value="Ver Resultado" id="botao">
+    <div id="resposta"></div>
+
+    <script>
+        botao = document.querySelector('input#botao')
+        botao.addEventListener('click', clicar)
+
+        pais = document.querySelector('input#paiis')
+        resposta = document.querySelector('div#resposta')
+
+        function clicar() {
+            pais_minusculo = pais.value.toLowerCase()
+            if (pais_minusculo == 'brasil') {
+            resposta.innerHTML = 'Você é BRASILEIRO!'
+            }
+            else {
+                resposta.innerHTML = 'Você é ESTRANGEIRO!'
+            }
+        }
+    </script>
+</body>
+</html>

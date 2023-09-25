@@ -1,0 +1,15 @@
+body {
+    background-color: darkcyan;
+    color: white;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+section {
+    width: 500px;
+    background-color: white;
+    color: darkcyan;
+    border-radius: 25px;
+    padding: 1%;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora para Aço inox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora para Aço inox</h1>
+    <section>
+        <h2>Barra Redonda</h2>
+        <p>Ø da barra: <input type="number" name="diametro" id="diametro"></p>
+        <p>Comprimento da barra: <input type="number" name="comp" id="comp"></p>
+        <input type="button" value="Calcular" id="botao" onclick="calcular()" onmouseenter="entrar()" onmouseout="sair()">
+        <div id="peso"></div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

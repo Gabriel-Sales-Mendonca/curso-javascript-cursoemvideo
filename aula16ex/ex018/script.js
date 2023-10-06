@@ -17,11 +17,24 @@ function adicionar() {
         opcao.text = `Valor ${numeros_digitados[numeros_digitados.length - 1]} adicionado.` // adiciona no select o valor digitado pelo o usuario que esta no array (o ultimo do array)
 
         numeros.appendChild(opcao) // adiciona o valor no select
+
+        var num = document.getElementById('num')
+        num.value = ''
+        num.focus()
     }
 }
 
 function finalizar() {
-    var maior = numeros_digitados.sort()
+    var maior = numeros_digitados[0]
+    var menor = numeros_digitados[0]
+
+    for (c = 0; c < numeros_digitados.length; c++) { 
+        if (numeros_digitados[c] > maior) { // pega o maior valor do array
+            maior = numeros_digitados[c]
+        } else if (numeros_digitados[c] < menor) { // pega o menor valor do array
+            menor = numeros_digitados[c]
+        }
+    }
 
     var somatorio = 0
     for (var c = 0; c < numeros_digitados.length; c++) {
@@ -32,7 +45,8 @@ function finalizar() {
 
     var resultado = document.getElementById('resultado')
     resultado.innerHTML = `Ao todo, temos ${numeros_digitados.length} números cadastrados.<br>
-    O maior valor informado foi ${maior[maior.length - 1]}.<br>
+    O maior valor informado foi ${maior}.<br>
+    O menor valor informado foi ${menor}.<br>
     Somando todos os valores, temos ${somatorio}.<br>
     A média dos valores digitados é ${media}.`
 }
